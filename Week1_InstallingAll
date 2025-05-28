@@ -1,0 +1,309 @@
+## Tutorial Semana 1: Setup & Shell
+
+**Público-alvo:** Iniciantes sem experiência prévia em UNIX, Python ou ferramentas de desenvolvimento.
+
+**Pré-requisitos:**
+
+- MacBook Air M2 com macOS atualizado
+- Conexão à internet
+- Conta GitHub ativa
+
+---
+
+### Introdução
+
+Nesta primeira semana, você vai configurar todo o ambiente necessário para começar a explorar cybersecurity e inteligência artificial no seu Mac M2. Vamos instalar e validar:
+
+1. **Homebrew** (gestor de pacotes)
+2. **iTerm2** + **Oh My Zsh** (terminal avançado)
+3. **Python 3** e **venv** (ambientes isolados)
+4. **Visual Studio Code** (editor de código)
+5. **Git** e **GitHub Codespaces** (controle de versão e dev cloud)
+
+Ao final, você terá uma base estável, com terminal customizado, ambiente Python funcionando e um Codespace pronto para seus primeiros scripts.
+
+---
+
+### Passo a Passo Diário
+
+### **Dia 1 – Homebrew**
+
+1. **Verifique o espaço em disco disponível** antes de instalar (você precisa de pelo menos 11 GB livres):
+    
+    ```bash
+    df -h /
+    
+    ```
+    
+    - Se o espaço livre for menor que 11 GB, considere:
+        - Esvaziar a Lixeira (`Trash`) e limpar downloads antigos.
+        - Usar o **Utilitário de Disco** para identificar arquivos grandes.
+        - Desinstalar apps que não utiliza: `brew uninstall <app>`.
+        - Mover arquivos pesados para um HD externo ou iCloud.
+2. Abra o Terminal (Aplicativos → Utilitários → Terminal).
+3. Instale Homebrew colando e executando:
+    
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    
+    ```
+    
+4. Configure o PATH (caso não seja automático):
+    
+    ```bash
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    source ~/.zprofile
+    
+    ```
+    
+5. Verifique a instalação:
+    
+    ```bash
+    brew --version
+    brew doctor
+    
+    ```
+    
+
+### **Dia 2 – iTerm2 + Oh My Zsh** – iTerm2 + Oh My Zsh**
+
+1. Instale o iTerm2:
+    
+    ```bash
+    brew install --cask iterm2
+    
+    ```
+    
+2. Abra o iTerm2 (Aplicativos → iTerm).
+3. Instale o Oh My Zsh para personalizar seu shell:
+    
+    ```bash
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    
+    ```
+    
+4. Edite o tema padrão em `~/.zshrc`:
+    
+    ```bash
+    ZSH_THEME="agnoster"
+    
+    ```
+    
+5. Recarregue as configurações:
+    
+    ```bash
+    source ~/.zshrc
+    
+    ```
+    
+
+### **Dia 3 – Python 3 & Virtual Environment**
+
+1. Instale o Python 3.9 via Homebrew:
+    
+    ```bash
+    brew install python@3.9
+    
+    ```
+    
+2. Atualize o pip e ferramentas básicas:
+    
+    ```bash
+    python3 -m pip install --upgrade pip setuptools wheel
+    
+    ```
+    
+3. Crie uma pasta para ambientes virtuais:
+    
+    ```bash
+    mkdir -p ~/envs
+    
+    ```
+    
+4. Crie e ative um novo ambiente:
+    
+    ```bash
+    python3 -m venv ~/envs/secai-week1
+    source ~/envs/secai-week1/bin/activate
+    
+    ```
+    
+5. Teste:
+    
+    ```bash
+    python --version
+    which python
+    
+    ```
+    
+
+### **Dia 4 – Visual Studio Code**
+
+1. Instale o VS Code:
+    
+    ```bash
+    brew install --cask visual-studio-code
+    
+    ```
+    
+2. Abra o VS Code e execute `Cmd+Shift+P` → **Shell Command: Install 'code' in PATH**.
+3. Teste no terminal:
+    
+    ```bash
+    code --version
+    
+    ```
+    
+4. Abra uma pasta de teste:
+    
+    ```bash
+    mkdir ~/projects/week1 && cd ~/projects/week1
+    code .
+    
+    ```
+    
+
+### **Dia 5 – Git & Codespaces**
+
+1. Instale o Git:
+    
+    ```bash
+    brew install git
+    
+    ```
+    
+2. Configure dados de usuário:
+    
+    ```bash
+    git config --global user.name "Seu Nome"
+    git config --global user.email "seu@email"
+    
+    ```
+    
+3. No GitHub, crie o repositório `secai-week1` (público ou privado).
+4. Clone localmente:
+    
+    ```bash
+    git clone git@github.com:seu-usuario/secai-week1.git
+    
+    ```
+    
+5. No GitHub, abra **Code → Open with Codespaces → New codespace**.
+
+---
+
+### Dicas & Boas Práticas
+
+- **iTerm2:** use `Cmd+T` para nova aba, `Cmd+Shift+]` para próxima aba.
+- **Oh My Zsh:** habilite plugins como `git` e `zsh-autosuggestions` em seu `~/.zshrc`.
+- **Ambientes venv:** sempre ative com `source ~/envs/.../bin/activate` antes de instalar pacotes.
+- *Evite usar ****`sudo pip`** para não afetar o Python do sistema.
+- **Frequência de commits:** faça ao menos um commit por dia com mensagem clara (`Semana1: Homebrew instalado`).
+
+---
+
+### Recursos & Vídeos
+
+- Homebrew: ▶️ [Como instalar Homebrew no Mac](https://youtu.be/IN9y-2XJpRA)
+- iTerm2 + Oh My Zsh: ▶️ [Personalize o terminal no Mac M1/M2](https://youtu.be/zdvdy0Ct0-g)
+- Python 3 no Mac: ▶️ [Python 3 com Homebrew](https://youtu.be/0qt2MZ3r994)
+- VS Code no Mac: ▶️ [Setup VS Code no macOS](https://youtu.be/3Lvew35xJOc)
+- GitHub Codespaces: ▶️ [Começando com Codespaces](https://youtu.be/U2m1kh-elFw)
+
+---
+
+### Objetivo Final da Semana
+
+> Verificação: Rode sem erros:
+> 
+> 
+> ```bash
+> brew --version && git --version && python --version && code --version
+> 
+> ```
+> 
+> **E** compartilhe um screenshot do seu terminal e do Codespace aberto no canal.
+> 
+
+---
+
+*Isso conclui seu tutorial introdutório de configuração. Vamos avançar para a Semana 2 em breve!*
+
+### 🌟 Por que Semana 1 (Setup & Shell) é Crucial
+
+> "Construa a fundação certa e o arranha‑céu do conhecimento sobe sem tremer."
+> 
+
+---
+
+### 🎯 Propósito da Página
+
+Explicar **por que** cada etapa da Semana 1 foi necessária antes de avançarmos para Linux, pentest e AI. Se futuramente você esquecer a utilidade de um componente, esta página serve como referência rápida.
+
+---
+
+### 🔧 Ferramentas & Razões
+
+| Ferramenta | O que é | Por que instala‑la primeiro? | Ganho imediato |
+| --- | --- | --- | --- |
+| **Homebrew** | Gestor de pacotes para macOS | Permite instalar/atualizar tudo (Python, Git, Wireshark) com um comando. Elimina downloads manuais. | Instalação de futuras ferramentas em segundos (ex.: `brew install nmap`). |
+| **iTerm2** | Terminal avançado | Abas, divisões, busca, atalhos — produtividade na linha de comando. | Fluxo mais rápido (⌘+D divide painéis, ⌘+T abre aba). |
+| **Oh My Zsh** | Framework p/ Zsh | Prompt informativo (branch Git, venv), plugins (`git`, `zsh‑autosuggestions`). | Feedback visual instantâneo → menos erros em comandos. |
+| **Python 3 + venv** | Interpretor + ambientes isolados | Separar dependências de cada projeto; evitar “dependency hell”. | Instalar libs de segurança (Scapy) ou ML (PyTorch) sem quebrar o sistema. |
+| **VS Code** | Editor/IDE leve | Depuração, extensões (Python, GitLens, Copilot), integração com Codespaces. | Editar scripts, ver controle de versão e terminal embutido num só lugar. |
+| **Git + GitHub Codespaces** | Versionamento & IDE cloud | Histórico, colaboração, rollbacks; ambiente Linux padronizado sem VM. | Lab online pronto em 30 s (Útil p/ TryHackMe, PortSwigger). |
+
+---
+
+### 🧩 Como tudo se conecta
+
+```mermaid
+flowchart TD
+  Brew -->|instala| iTerm2
+  Brew --> Python
+  Brew --> VSCode
+  iTerm2 --> Zsh[Oh My Zsh]
+  Python --> Venv
+  VSCode --> Git
+  Git --> Codespaces
+  Codespaces --> Labs[Plataformas de Labs]
+
+```
+
+*Visualização de dependências: cada seta mostra quem depende de quem para funcionar sem fricção.*
+
+---
+
+### 🚀 Benefícios Tangíveis
+
+- **Produtividade +30 %**: atalhos de iTerm2 + prompt informativo reduzem digitação repetitiva.
+- **Zero “works on my machine”**: Codespaces garante ambiente Linux limpo em cloud; perfeito para desafios TryHackMe.
+- **Segurança**: venv evita colisão de libs e reduz risco de scripts mal‑comportados afetarem o sistema global.
+- **Escalabilidade**: Homebrew mantém tudo atualizável com `brew upgrade`. Menos dor de cabeça em versões.
+
+---
+
+### 📌 Lembretes‑Chave (Toggle)
+
+---
+
+### 🧮 Pequena Fórmula (Notion)
+
+> Calcular % de duração da Semana 1 concluída:
+> 
+
+```notion
+prop("Dia Concluído") / 5 * 100
+
+```
+
+Marque cada checkbox diária em sua base para ver o progresso.
+
+---
+
+### ✅ Próximo Passo
+
+> Começar Semana 2: dominar comandos Linux e resolver Bandit Lv0‑3.
+> 
+
+*Volte a esta página sempre que precisar reforçar por que esta fundação importa.*
