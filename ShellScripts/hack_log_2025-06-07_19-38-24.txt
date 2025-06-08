@@ -1,0 +1,20 @@
+--- Initiating Data Extraction ---
+Timestamp: 2025-06-07_19-38-24
+Source: /Users/Ademar/Documents/CyberSecAI_Curso/CyberHeaven/ShellScripts/data_core
+Vault: /Users/Ademar/Documents/CyberSecAI_Curso/CyberHeaven/ShellScripts/secure_vault
+
+Executing data transfer...
+building file list ... 
+ 0 files...5 files to consider
+file1.txt
+           0 100%    0.00kB/s    0:00:00 (xfer#1, to-check=3/5)
+file2.log
+          14 100%    0.00kB/s    0:00:00          14 100%    0.00kB/s    0:00:00 (xfer#2, to-check=2/5)
+subnode/
+subnode/secret.doc
+           0 100%    0.00kB/s    0:00:00 (xfer#3, to-check=0/5)
+
+sent 293 bytes  received 92 bytes  770.00 bytes/sec
+total size is 14  speedup is 0.04
+Data secured successfully!
+--- Extraction Complete ---
