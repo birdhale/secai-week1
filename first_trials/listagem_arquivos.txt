@@ -1,0 +1,11 @@
+total 24
+drwxr-xr-x  4 Ademar  staff   128 31 Mai 01:19 Modulo1_Setup
+drwxr-xr-x  5 Ademar  staff   160 31 Mai 01:19 Modulo2_CLI_Scripting
+drwxr-xr-x  3 Ademar  staff    96 31 Mai 01:20 Modulo3_Python
+-rw-r--r--  1 Ademar  staff  1692 31 Mai 01:23 arquivo_grande.txt
+-rw-r--r--  1 Ademar  staff     0 31 Mai 01:34 listagem_arquivos.txt
+-rwxr--r--  1 Ademar  staff    38 31 Mai 01:29 meu_script.sh
+-rwxr--r--  1 Ademar  staff     0 31 Mai 01:31 segredo.txt
+-rw-r--r--  1 Ademar  staff    35 31 Mai 01:22 temp.txt
+-rw-r--r--  1 Ademar  staff     0 31 Mai 01:19 teste2.log
+Sáb 31 Mai 2025 01:34:38 -03

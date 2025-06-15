@@ -1,0 +1,5 @@
+#!/bin/zsh
+NOME="Estudante de Cibersegurança"
+MENSAGEM="Bem-vindo(a) ao mundo dos scripts, ${NOME}!"
+echo $MENSAGEM
+
